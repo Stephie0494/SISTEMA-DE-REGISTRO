@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,43 @@
     
     <h2>Resultado:</h2>
     <p id="resultado"></p>
+
+    <script src="app.js"></script>
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <div class="icon">
+                <img src="icon.png" alt="Icono">
+            </div>
+            <textarea id="inputTexto" placeholder="Ingrese el texto aquí..."></textarea>
+            <div class="buttons">
+                <label>
+                    <input type="radio" name="option" checked> 
+                    Encriptar
+                </label>
+                <label>
+                    <input type="radio" name="option">
+                    Desencriptar
+                </label>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <p id="resultado">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <button class="copy-button">Copiar</button>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
