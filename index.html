@@ -168,7 +168,178 @@
     </script>
 </body>
 </html>  -->
-<!DOCTYPE html>
+
+[4:56 p. m., 27/8/2024] Lucho Ecom: <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            width: 80%;
+            max-width: 900px;
+            justify-content: space-between;
+        }
+
+        .input-section {
+            width: 60%;
+            padding-right: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .input-section textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .input-section img {
+            width: 40px;
+            margin-bottom: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .button-group button {
+            background-color: #002f5e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-group button:last-child {
+            background-color: #fff;
+            color: #002f5e;
+            border: 1px solid #002f5e;
+        }
+
+        .output-section {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .output-section p {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .output-section button {
+            background-color: #fff;
+            color: #002f5e;
+            border: 1px solid #002f5e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        .output-section button:hover, 
+        .button-group button:hover {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .input-section, .output-section {
+                width: 100%;
+                padding-right: 0;
+                border-right: none;
+            }
+
+            .input-section {
+                margin-bottom: 20px;
+            }
+
+            .output-section button {
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <img src="icon.png" alt="Icono">
+            <textarea id="inputTexto" placeholder="Ingrese el texto aquí..."></textarea>
+            <div class="button-group">
+                <button onclick="encriptar()">Encriptar</button>
+                <button onclick="desencriptar()">Desencriptar</button>
+            </div>
+        </div>
+        <div class="output-section">
+            <p id="resultado">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <button onclick="copiar()">Copiar</button>
+        </div>
+    </div>
+
+    <script>
+        function encriptar() {
+            // Lógica para encriptar
+            const texto = document.getElementById("inputTexto").value;
+            document.getElementById("resultado").textContent = btoa(texto);
+        }
+
+        function desencriptar() {
+            // Lógica para desencriptar
+            const texto = document.getElementById("inputTexto").value;
+            document.getElementById("resultado").textContent = atob(texto);
+        }
+
+        function copiar() {
+            // Lógica para copiar
+            const resultado = document.getElementById("resultado");
+            navigator.clipboard.writeText(resultado.textContent)
+                .then(() => alert('Texto copiado'))
+                .catch(err => console.error('Error al copiar:', err));
+        }
+    </script>
+</body>
+</html>
+[5:05 p. m., 27/8/2024] Lucho Ecom: <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -178,7 +349,7 @@
         /* Estilos generales */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+            background-color: #e0f7fa; /* Celeste claro para el fondo */
             color: #333;
             margin: 0;
             display: flex;
@@ -215,11 +386,12 @@
             height: 150px;
             padding: 15px;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 8px;
             resize: none;
             box-sizing: border-box;
             font-family: inherit;
+            background-color: #ffffff; /* Fondo blanco para el textarea */
         }
 
         /* Grupo de botones */
@@ -234,18 +406,18 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #00bcd4; /* Celeste oscuro para los botones */
             color: white;
             transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #008ba3; /* Oscurece el color al pasar el cursor */
         }
 
         button:focus {
             outline: none;
-            box-shadow: 0 0 5px #4CAF50;
+            box-shadow: 0 0 5px #00bcd4;
         }
 
         /* Contenedor de resultado */
@@ -262,9 +434,9 @@
         #resultado {
             font-size: 16px;
             padding: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            background-color: #f9f9f9;
+            background-color: #ffffff; /* Fondo blanco para el resultado */
             word-wrap: break-word;
             display: inline-block;
             width: 100%;
