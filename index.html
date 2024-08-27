@@ -30,26 +30,22 @@
 </head>
 <body>
     <div class="container">
-        <div class="input-section">
-            <div class="icon">
-                <img src="icon.png" alt="Icono">
-            </div>
+        <header>
+            <h1>Encriptador de Texto</h1>
+        </header>
+        
+        <div class="textarea-container">
             <textarea id="inputTexto" placeholder="Ingrese el texto aquí..."></textarea>
-            <div class="buttons">
-                <label>
-                    <input type="radio" name="option" checked> 
-                    Encriptar
-                </label>
-                <label>
-                    <input type="radio" name="option">
-                    Desencriptar
-                </label>
-            </div>
         </div>
 
-        <div class="output-section">
-            <p id="resultado">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <button class="copy-button">Copiar</button>
+        <div class="button-group">
+            <button onclick="encriptar()">Encriptar</button>
+            <button onclick="desencriptar()">Desencriptar</button>
+        </div>
+        
+        <div class="result-container">
+            <h2>Resultado:</h2>
+            <p id="resultado"></p>
         </div>
     </div>
 
